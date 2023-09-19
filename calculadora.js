@@ -45,6 +45,10 @@ let ultOperador = "";
 // Metodos de las operaciones
 // Sumar
 sumar.addEventListener("click", ()=>{
+    // Evitamos los NaN value, en caso de querer calcular directamente desde el total
+    if(screen.value==""){
+        screen.value=0;
+    }
     // Al hacer click en sumar, guardamos el valor escrito en una memoria total.
     total += parseFloat(screen.value);
     // Borramos el valor escrito para que no interfiera en futuras operaciones
@@ -58,6 +62,10 @@ sumar.addEventListener("click", ()=>{
 
 // Restar
 restar.addEventListener("click", ()=>{
+    // Evitamos los NaN value, en caso de querer calcular directamente desde el total
+    if(screen.value==""){
+        screen.value=0;
+    }
     // Al hacer click en restar, guardamos el valor escrito en la memoria total.
     total = Math.abs(parseFloat(screen.value) - total) ;
     // Borramos el valor escrito para que no interfiera en futuras operaciones
@@ -71,6 +79,10 @@ restar.addEventListener("click", ()=>{
 
 // Multiplicar
 mul.addEventListener("click", ()=>{
+    // Evitamos los NaN value, en caso de querer calcular directamente desde el total
+    if(screen.value==""){
+        screen.value=1;
+    }
     // Tomamos el valor del primer numero introducido.
     operador1 = parseFloat(screen.value);
     // Si aun no hemos realizado ninguna operacion, debemos evitar multiplicar por 0, asi que le asignamos un 1.
@@ -87,6 +99,10 @@ mul.addEventListener("click", ()=>{
 
 // Multiplicar
 divi.addEventListener("click", ()=>{
+    // Evitamos los NaN value, en caso de querer calcular directamente desde el total
+    if(screen.value==""){
+        screen.value=1;
+    }
     // Tomamos el valor del primer numero introducido.
     operador1 = parseFloat(screen.value);
     // Si aun no hemos realizado ninguna operacion, debemos evitar dividir entre 0, asi que le asignamos un 1.
@@ -112,6 +128,10 @@ divi.addEventListener("click", ()=>{
 });
 
 eq.addEventListener("click", ()=>{
+    // Evitamos los NaN value, en caso de querer calcular directamente desde el total
+    if(screen.value==""){
+        screen.value=0;
+    }
     // Al pulsar igual, comprobamos cual fue la ultima operacion realizada, para realizar el calculo del valor restante.
     if(ultOperador == "+"){
         total += parseFloat(screen.value);
@@ -122,6 +142,8 @@ eq.addEventListener("click", ()=>{
         total /= parseFloat(screen.value);
     }else if(ultOperador == "-"){
         total -= parseFloat(screen.value);
+    }else{
+        total = parseFloat(screen.value);
     }
     screenTotal.value = parseFloat(total);
     screen.value="";
