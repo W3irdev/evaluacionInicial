@@ -5,21 +5,23 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.wrapper{
-    margin: auto;
-    width: 60%;
-    height: auto;
-}
 
 body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background-color: #202d21;
-
+    
 }
 
+.wrapper{
+    margin: auto;
+    width: 60%;
+    height: auto;
+}
 .menuSuperior{
+    display: flex;
+    justify-content: center;
     transform: translate(50%, 50%);
     width: 450px;
     height: auto;
@@ -37,12 +39,13 @@ a{
     text-decoration: none;
     color: rgb(221, 243, 190);
     border-color: rgb(149, 195, 82);
+    margin-left: 1vmax;
 }
 
 
 .container{
     display: flex;
-    transform: translate(50%, 50px);
+    transform: translate(50%, 100px);
     width: 450px;
     background: #354a37;
     border-radius: 8px;
@@ -100,7 +103,7 @@ height: 50px;
 }
 
 .appForm{
-    height: 100%;
+    height: auto;
 }
 
 .appForm input{
@@ -108,12 +111,49 @@ height: 50px;
     height: 25px;
 }
 
-#texto{
-    height: 200px;
+textarea{
+    height: auto;
     width: 100%;
     resize: none;
 }
 
 .inicio{
     color: whitesmoke;
+}
+
+/* .footer{
+    display: flex;
+    justify-content: center;
+    transform: translate(50%, 130px);
+    width: 450px;
+    background:#354a37;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 3%;
+
+} */
+
+.nuevaEntrada{
+    display: flex;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 2%;
+    background-color: grey;
+
+}
+
+#nuevaEntradaBlog{
+    display: flex;
+    justify-content: center;
+    transform: translate(50%, 50%);
+    width: 450px;
+    height: auto;
+    background:#354a37;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 3%;
+}
+
+#nuevaEntradaBlog input{
+    transform: translate(0%,220%);
 }
