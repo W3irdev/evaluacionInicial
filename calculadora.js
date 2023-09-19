@@ -2,6 +2,16 @@ let total = 0;
 let operador1 = 0;
 let operador2 = 0;
 let contador = 0;
+let content = "";
+
+// Otros elementos
+const del = document.getElementById("del").addEventListener("click", ()=>{
+    content = screen.value;
+    screen.value = content.substring(0,content.length-1);
+
+});
+
+const reset = document.getElementById("C").addEventListener("click", ()=>{screen.value="";screenTotal.value=""; total=0})
 
 // Capturamos los elementos de visualizacion de nuestra calculadora
 let screen = document.getElementById("screen");
@@ -25,6 +35,7 @@ const six = document.getElementById("6").addEventListener("click", ()=>{screen.v
 const seven = document.getElementById("7").addEventListener("click", ()=>{screen.value+=7});
 const eight = document.getElementById("8").addEventListener("click", ()=>{screen.value+=8});
 const nine = document.getElementById("9").addEventListener("click", ()=>{screen.value+=9});
+const comma = document.getElementById(",").addEventListener("click", ()=>{screen.value+="."});
 
 // Arrays para orden de operaciones
 let ultOperador = "";
@@ -109,9 +120,9 @@ eq.addEventListener("click", ()=>{
     }else if(ultOperador == "/"){
         if(parseFloat(screen.value)==0) screen.value = "No puede dividir entre 0";
         total /= parseFloat(screen.value);
-    }else{
+    }else if(ultOperador == "-"){
         total -= parseFloat(screen.value);
     }
     screenTotal.value = parseFloat(total);
-
+    screen.value="";
 });
